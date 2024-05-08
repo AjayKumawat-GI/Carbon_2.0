@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbon.API", "Carbon\Carbon.API.csproj", "{3412A869-C3A6-41D0-914D-3FCFE6748105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbon.Service", "Carbon.Service\Carbon.Service.csproj", "{52E01E80-E32E-48B6-9ADB-B6D302B6CC14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3412A869-C3A6-41D0-914D-3FCFE6748105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3412A869-C3A6-41D0-914D-3FCFE6748105}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3412A869-C3A6-41D0-914D-3FCFE6748105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E01E80-E32E-48B6-9ADB-B6D302B6CC14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E01E80-E32E-48B6-9ADB-B6D302B6CC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E01E80-E32E-48B6-9ADB-B6D302B6CC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E01E80-E32E-48B6-9ADB-B6D302B6CC14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
