@@ -14,12 +14,20 @@ namespace Referral.Mediator.Infrastructure
     {
         
         //NEW
-        public async Task<dynamic> CallApiAsync(string baseUrl, HttpMethod httpMethod, string endpoint, AuthenticationHeaderValue authHeader = null, object requestBody = null, IDictionary<string, string> parameters = null)
+        public async Task<dynamic> CallApiAsync(string baseUrl, HttpMethod httpMethod, string endpoint, AuthenticationHeaderValue authHeader = null, IDictionary<string, string> headers = null, object requestBody = null, IDictionary<string, string> parameters = null)
         {
             using (HttpClient client = new HttpClient())
             {
                 // Set the base address of the API
                 client.BaseAddress = new Uri(baseUrl);
+
+                if(headers != null)
+                {
+                    foreach (var header in headers)
+                    {
+                        client.DefaultRequestHeaders.Add(header.Key, header.Value);
+                    }
+                }
 
                 if(authHeader != null)
                 {
@@ -54,12 +62,20 @@ namespace Referral.Mediator.Infrastructure
             }
         }
 
-        public async Task<string> CallApiAsync(string baseUrl, string endpoint, HttpMethod httpMethod, AuthenticationHeaderValue authHeader = null, object requestBody = null, IDictionary<string, string> parameters = null, bool returnJson = true)
+        public async Task<string> CallApiAsync(string baseUrl, string endpoint, HttpMethod httpMethod, AuthenticationHeaderValue authHeader = null, IDictionary<string, string> headers = null, object requestBody = null, IDictionary<string, string> parameters = null, bool returnJson = true)
         {
             using (HttpClient client = new HttpClient())
             {
                 // Set the base address of the API
                 client.BaseAddress = new Uri(baseUrl);
+
+                if (headers != null)
+                {
+                    foreach (var header in headers)
+                    {
+                        client.DefaultRequestHeaders.Add(header.Key, header.Value);
+                    }
+                }
 
                 if (authHeader != null)
                 {
@@ -94,12 +110,20 @@ namespace Referral.Mediator.Infrastructure
             }
         }
 
-        public async Task<TResponse> CallApiAsync<TResponse>(string baseUrl, string endpoint, HttpMethod httpMethod, AuthenticationHeaderValue authHeader = null, object requestBody = null, IDictionary<string, string> parameters = null)
+        public async Task<TResponse> CallApiAsync<TResponse>(string baseUrl, string endpoint, HttpMethod httpMethod, AuthenticationHeaderValue authHeader = null, IDictionary<string, string> headers = null, object requestBody = null, IDictionary<string, string> parameters = null)
         {
             using (HttpClient client = new HttpClient())
             {
                 // Set the base address of the API
                 client.BaseAddress = new Uri(baseUrl);
+
+                if (headers != null)
+                {
+                    foreach (var header in headers)
+                    {
+                        client.DefaultRequestHeaders.Add(header.Key, header.Value);
+                    }
+                }
 
                 if (authHeader != null)
                 {
