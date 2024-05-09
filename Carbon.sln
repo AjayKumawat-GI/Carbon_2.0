@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carbon.API", "Carbon\Carbon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbon.Service", "Carbon.Service\Carbon.Service.csproj", "{831AE286-CE72-4D7E-9497-BC00E3BBFC5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbon.Utility", "Carbon.Utility\Carbon.Utility.csproj", "{647C4609-8AB3-4C84-BE8E-112ABF31CCD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carbon.Mediator", "Carbon.Mediator\Carbon.Mediator.csproj", "{01AD0E7E-21D1-4C2C-A685-B6065B725237}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{831AE286-CE72-4D7E-9497-BC00E3BBFC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{831AE286-CE72-4D7E-9497-BC00E3BBFC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{831AE286-CE72-4D7E-9497-BC00E3BBFC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647C4609-8AB3-4C84-BE8E-112ABF31CCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647C4609-8AB3-4C84-BE8E-112ABF31CCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647C4609-8AB3-4C84-BE8E-112ABF31CCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647C4609-8AB3-4C84-BE8E-112ABF31CCD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01AD0E7E-21D1-4C2C-A685-B6065B725237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01AD0E7E-21D1-4C2C-A685-B6065B725237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01AD0E7E-21D1-4C2C-A685-B6065B725237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01AD0E7E-21D1-4C2C-A685-B6065B725237}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
