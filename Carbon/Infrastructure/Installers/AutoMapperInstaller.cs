@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Installers
+namespace Carbon.API.Infrastructure.Installers
 {
     public class AutoMapperInstaller : IInstaller
     {

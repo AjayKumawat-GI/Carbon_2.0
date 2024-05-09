@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Installers
+namespace Carbon.API.Infrastructure.Installers
 {
     public class ApiInstaller : IInstaller
     {
@@ -15,7 +15,7 @@ namespace Referral.API.Infrastructure.Installers
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddCors(c =>
             {
-                c.AddPolicy("Referral", builder =>
+                c.AddPolicy("Carbon", builder =>
                 {
                     builder.AllowAnyOrigin();
                     builder.AllowAnyHeader();

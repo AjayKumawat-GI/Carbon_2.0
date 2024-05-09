@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Installers
+namespace Carbon.API.Infrastructure.Installers
 {
     public class AuthenticationInstaller : IInstaller
     {

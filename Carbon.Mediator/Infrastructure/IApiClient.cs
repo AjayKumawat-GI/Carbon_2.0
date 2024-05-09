@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Referral.Mediator.Infrastructure
+namespace Carbon.Mediator.Infrastructure
 {
     public interface IApiClient
     {

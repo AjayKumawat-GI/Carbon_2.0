@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Referral.API.Infrastructure.Installers;
+using Carbon.API.Infrastructure.Installers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Extensions
+namespace Carbon.API.Infrastructure.Extensions
 {
     public static class InstallerExtensions
     {

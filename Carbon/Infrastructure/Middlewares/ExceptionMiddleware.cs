@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Referral.CoreApi.Infrastructure.Models;
-//using Referral.Logging;
-//using Referral.Logging.Interfaces;
-//using Referral.Model.Exception;
-//using Referral.Utility.DataHelper;
-//using Referral.Utility.Exceptions;
+using Carbon.API.Infrastructure.Models;
+//using Carbon.Logging;
+//using Carbon.Logging.Interfaces;
+//using Carbon.Model.Exception;
+//using Carbon.Utility.DataHelper;
+//using Carbon.Utility.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Referral.CoreApi.Infrastructure.Middlewares
+namespace Carbon.API.Infrastructure.Middlewares
 {
     public class ExceptionMiddleware
     {

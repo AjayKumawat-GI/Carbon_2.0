@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Middlewares
+namespace Carbon.API.Infrastructure.Middlewares
 {
     public class RequestLoggingMiddleware
     {

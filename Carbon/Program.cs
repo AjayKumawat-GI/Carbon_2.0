@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Referral.API.Infrastructure.Extensions;
+using Carbon.API.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

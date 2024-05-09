@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Referral.API.Infrastructure.Middlewares;
-using Referral.CoreApi.Infrastructure.Middlewares;
+using Carbon.API.Infrastructure.Middlewares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Extensions
+namespace Carbon.API.Infrastructure.Extensions
 {
     public static class ErrorLoggingMiddlewareExtensions
     {

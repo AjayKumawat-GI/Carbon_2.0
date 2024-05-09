@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Referral.CoreApi.Infrastructure.Models;
+using Carbon.API.Infrastructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Referral.API.Infrastructure.Middlewares
+namespace Carbon.API.Infrastructure.Middlewares
 {
     public class UnauthorizedMiddleware
     {

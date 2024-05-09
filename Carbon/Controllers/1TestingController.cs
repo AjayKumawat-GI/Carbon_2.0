@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Referral.Mediator.Infrastructure;
+using Carbon.Mediator.Infrastructure;
 
 namespace Carbon.API.Controllers
 {

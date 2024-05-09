@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
-using Referral.API.Infrastructure.Installers;
-using Referral.Mediator.Infrastructure;
+using Carbon.API.Infrastructure.Installers;
+using Carbon.Mediator.Infrastructure;
 
 namespace Carbon.API.Infrastructure.Installers
 {

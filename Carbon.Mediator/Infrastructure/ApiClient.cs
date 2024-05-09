@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Referral.Mediator.Infrastructure
+namespace Carbon.Mediator.Infrastructure
 {
     public class ApiClient : IApiClient
     {
@@ -49,7 +49,7 @@ namespace Referral.Mediator.Infrastructure
                 }
 
                 //Setting User Agent
-                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Referral", "1.0"));
+                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Carbon", "1.0"));
 
                 // Send the request and get the response
                 HttpResponseMessage response = await client.SendAsync(request);
@@ -97,7 +97,7 @@ namespace Referral.Mediator.Infrastructure
                 }
 
                 //Setting User Agent
-                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Referral", "1.0"));
+                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Carbon", "1.0"));
 
                 // Send the request and get the response
                 HttpResponseMessage response = await client.SendAsync(request);
@@ -145,7 +145,7 @@ namespace Referral.Mediator.Infrastructure
                 }
 
                 //Setting User Agent
-                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Referral", "1.0"));
+                request.Headers.UserAgent.Add(new ProductInfoHeaderValue("Carbon", "1.0"));
 
                 // Send the request and get the response
                 HttpResponseMessage response = await client.SendAsync(request);

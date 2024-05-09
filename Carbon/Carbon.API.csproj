@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Carbon.Data\Carbon.Data.csproj" />
     <ProjectReference Include="..\Carbon.Mediator\Carbon.Mediator.csproj" />
     <ProjectReference Include="..\Carbon.Service\Carbon.Service.csproj" />
   </ItemGroup>
