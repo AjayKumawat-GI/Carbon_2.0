@@ -12,6 +12,7 @@ namespace Referral.API.Infrastructure.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddControllers();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddCors(c =>
             {
                 c.AddPolicy("Referral", builder =>
