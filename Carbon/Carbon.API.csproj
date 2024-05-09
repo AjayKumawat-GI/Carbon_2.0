@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Carbon.Mediator\Carbon.Mediator.csproj" />
+    <ProjectReference Include="..\Carbon.Service\Carbon.Service.csproj" />
   </ItemGroup>
 
 </Project>

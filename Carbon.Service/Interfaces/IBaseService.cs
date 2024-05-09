@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carbon.Service.Interfaces
 {
-    public class IBaseService
+    public interface IBaseService
     {
     }
 }

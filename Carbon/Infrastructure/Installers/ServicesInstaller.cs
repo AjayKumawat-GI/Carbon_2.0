@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Carbon.Service.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore.AutoRegisterDi;
 using System;
@@ -13,14 +14,14 @@ namespace Referral.API.Infrastructure.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            //var assembliesToScan = new[]{
-            //    Assembly.GetExecutingAssembly(),
-            //    Assembly.GetAssembly(typeof(IBaseService))
-            //};
+            var assembliesToScan = new[]{
+                Assembly.GetExecutingAssembly(),
+                Assembly.GetAssembly(typeof(IBaseService))
+            };
 
-            //services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
-            //     .Where(c => c.Name.EndsWith("Service") || c.Name.EndsWith("Logging"))
-            //     .AsPublicImplementedInterfaces();
+            services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
+                 .Where(c => c.Name.EndsWith("Service") || c.Name.EndsWith("Logging"))
+                 .AsPublicImplementedInterfaces();
         }
     }
 }
