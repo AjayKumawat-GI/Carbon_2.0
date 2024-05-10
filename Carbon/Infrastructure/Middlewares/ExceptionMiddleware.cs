@@ -2,11 +2,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Carbon.API.Infrastructure.Models;
-//using Carbon.Logging;
-//using Carbon.Logging.Interfaces;
-//using Carbon.Model.Exception;
-//using Carbon.Utility.DataHelper;
-//using Carbon.Utility.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Carbon.Service.Interfaces;
 
 namespace Carbon.API.Infrastructure.Middlewares
 {
@@ -22,16 +18,19 @@ namespace Carbon.API.Infrastructure.Middlewares
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
         private readonly IHttpContextAccessor _accessor;
+        private readonly IExceptionLogging _exceptionLogging;
 
         public ExceptionMiddleware(
             RequestDelegate next
             , ILogger<ExceptionMiddleware> logger
             , IHttpContextAccessor accessor
+            , IExceptionLogging exceptionLogging
             )
         {
             _next = next;
             _logger = logger;
             _accessor = accessor;
+            _exceptionLogging = exceptionLogging;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -43,6 +42,7 @@ namespace Carbon.API.Infrastructure.Middlewares
             catch (Exception ex)
             {
                 await LogExceptionToDb(context, ex);
+                _exceptionLogging.blnLogError("", "Source", "Method", "", "");
                 await HandleExceptionAsync(context, ex);
             }
         }

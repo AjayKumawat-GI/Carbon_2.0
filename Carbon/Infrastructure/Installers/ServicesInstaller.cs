@@ -1,4 +1,5 @@
 ﻿using Carbon.Service.Interfaces;
+using Carbon.Service.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore.AutoRegisterDi;
@@ -22,6 +23,8 @@ namespace Carbon.API.Infrastructure.Installers
             services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
                  .Where(c => c.Name.EndsWith("Service") || c.Name.EndsWith("Logging"))
                  .AsPublicImplementedInterfaces();
+
+            services.AddSingleton<IExceptionLogging, ExceptionLogging>();
         }
     }
 }
