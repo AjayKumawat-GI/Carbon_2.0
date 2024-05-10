@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Carbon.Data;
 
 namespace Carbon.API.Infrastructure.Installers
 {
@@ -13,6 +15,8 @@ namespace Carbon.API.Infrastructure.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddDbContext<CarbonDbContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("Con")));
             //Configure DB service and after that uncomment the UnitOfWork Part
             //services.AddSingleton<IUnitOfWork, UnitOfWork>();
         }
