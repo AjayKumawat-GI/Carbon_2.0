@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Carbon.Data.Repositories;
+using Carbon.Data.Repositories.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,9 @@ namespace Carbon.API.Infrastructure.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+            #region User_Details
+            services.AddTransient(typeof(IUserDetailsRepository), typeof(UserDetailsRepository));
+            #endregion
         }
     }
 }

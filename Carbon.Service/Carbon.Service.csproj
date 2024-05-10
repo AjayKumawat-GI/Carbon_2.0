@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Carbon.Data\Carbon.Data.csproj" />
+    <ProjectReference Include="..\Carbon.Model\Carbon.Model.csproj" />
+    <ProjectReference Include="..\Carbon.Utility\Carbon.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

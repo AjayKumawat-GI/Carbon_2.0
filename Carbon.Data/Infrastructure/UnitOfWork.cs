@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Carbon.Database.Infrastructure
+namespace Carbon.Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -10,10 +10,14 @@ namespace Carbon.API.Infrastructure.Models
     {
         public ResponseModel()
         {
+            ApiErrorCode = 0;
+            Success = true;
             Status = 404;
             Message = "No Records";
         }
 
+        public int ApiErrorCode { get; set; }
+        public bool Success { get; set; }
         public int Status { get; set; }
         public string Message { get; set; }
         public T Data { get; set; }
@@ -25,6 +29,8 @@ namespace Carbon.API.Infrastructure.Models
 
         public void SetSuccess()
         {
+            ApiErrorCode = 0;
+            Success = true;
             Status = 200;
             Message = "Success";
         }
@@ -32,18 +38,24 @@ namespace Carbon.API.Infrastructure.Models
         public void SetSuccess(T data)
         {
             this.Data = data;
+            ApiErrorCode = 0;
+            Success = true;
             Status = 200;
             Message = "Success";
         }
 
         public void SetFailure(string failureMessage)
         {
+            ApiErrorCode = 0;
+            Success = false;
             Status = 417;
             Message = failureMessage;
         }
 
         public void SetAccessDenied()
         {
+            ApiErrorCode = 0;
+            Success = false;
             Status = 703;
             Message = "Access Denied";
         }
@@ -60,6 +72,8 @@ namespace Carbon.API.Infrastructure.Models
 
         public void SetInvalidModel()
         {
+            ApiErrorCode = 0;
+            Success = false;
             Status = 422;
             Message = "Invalid Model";
         }

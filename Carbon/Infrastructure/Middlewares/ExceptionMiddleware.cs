@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Carbon.Service.Interfaces;
+using System.Diagnostics;
 
 namespace Carbon.API.Infrastructure.Middlewares
 {
@@ -41,8 +42,7 @@ namespace Carbon.API.Infrastructure.Middlewares
             }
             catch (Exception ex)
             {
-                await LogExceptionToDb(context, ex);
-                _exceptionLogging.blnLogError("", "Source", "Method", "", "");
+                await LogExceptionToLogFile(context, ex);
                 await HandleExceptionAsync(context, ex);
             }
         }
@@ -89,22 +89,35 @@ namespace Carbon.API.Infrastructure.Middlewares
                             .FirstOrDefault();
         }
 
-        private async Task LogExceptionToDb(HttpContext context, Exception ex)
+        private async Task LogExceptionToLogFile(HttpContext context, Exception ex)
         {
-            //var exMesssageParameter = DataProvider.GetStringSqlParameter("@Message", ex.Message.ToString());
-            //var exTypeParameter = DataProvider.GetStringSqlParameter("@Type", ex.GetType().ToString());
-            //var exSourceParameter = DataProvider.GetStringSqlParameter("@Source", ex.StackTrace.ToString());
-            //var urlParameter = DataProvider.GetStringSqlParameter("@Url", context.Request?.Path.Value.ToString());
+            // Get the stack trace from the exception
+            var stackTrace = new StackTrace(ex);
 
-            //var sqlParams = new List<SqlParameter>
-            //{
-            //    exMesssageParameter,
-            //    exTypeParameter,
-            //    exSourceParameter,
-            //    urlParameter
-            //};
+            // Get the top-most stack frame (the one that threw the exception)
+            var stackFrame = stackTrace.GetFrame(0);
 
-            //await SqlHelper.ExecuteProcedureAsync<ReferralExceptionLog>("USP_InsertException", sqlParams);
+            if (stackFrame != null)
+            {
+                // Get the method that threw the exception
+                var method = stackFrame.GetMethod();
+
+                if (method != null)
+                {
+                    // Extract the class name and method name
+                    var className = method.ReflectedType?.FullName ?? "UnknownClass";
+                    var methodName = method.Name;
+
+                    var errorDescription = ex.InnerException != null ? ex.InnerException.Message : ex.StackTrace;
+                    // Log the exception with the class name and method name
+                    //_logger.LogError(ex, $"An error occurred in class: {className}, method: {methodName}");
+                    _exceptionLogging.blnLogError("", className, methodName, ex.Message, errorDescription);
+                    return;
+                }
+            }
+
+            // Log the exception without class and method name if stack frame or method info is unavailable
+            _logger.LogError(ex, "An error occurred.");
         }
 
         private ResponseModel<string> GetErrorResponseAsync(Exception ex)
@@ -123,6 +136,7 @@ namespace Carbon.API.Infrastructure.Middlewares
             //};
 
             //response.Errors = errorList;
+            response.Success = false;
             response.Message = ex.Message.ToString();
             return response;
         }

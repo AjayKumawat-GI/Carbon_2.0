@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Carbon.Database.Infrastructure
+namespace Carbon.Data.Infrastructure
 {
     public class Repository<T> : IRepository<T> where T : class
     {
